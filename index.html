@@ -32,39 +32,6 @@
             line-height: 1.6;
         }
 
-        /* Loading Animation */
-        #loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--charcoal);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 99999;
-            transition: opacity 0.5s ease, visibility 0.5s ease;
-        }
-
-        #loader.hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .spinner {
-            width: 60px;
-            height: 60px;
-            border: 4px solid rgba(204, 163, 0, 0.2);
-            border-top: 4px solid var(--gold);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
 
         /* Header / Navigation */
         .header {
@@ -566,9 +533,6 @@
 </head>
 <body>
     <!-- Loading Animation -->
-    <div id="loader">
-        <div class="spinner"></div>
-    </div>
 
     <header class="header">
         <div class="logo">ES DESIGN EXCELLENCY</div>
@@ -689,7 +653,7 @@
             <!-- PROJECT 1: PERSONAL BRAND -->
             <article class="project-card">
                 <div class="project-image">
-                    <img src="ES_logo_3_copy.png" alt="ES Design Excellency Logo">
+                    <img src="ES_logo_3_copy.jpg" alt="ES Design Excellency Logo">
                 </div>
                 <div class="project-content">
                     <div class="project-meta">
@@ -882,21 +846,6 @@
     </footer>
 
     <script>
-        // Loading Animation with fallback
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                document.getElementById('loader').classList.add('hidden');
-            }, 800);
-        });
-        
-        // Fallback: Force remove loader after 3 seconds regardless
-        setTimeout(function() {
-            var loader = document.getElementById('loader');
-            if (loader) {
-                loader.classList.add('hidden');
-            }
-        }, 3000);
-
         // Mobile Menu
         function toggleMobileMenu() {
             document.getElementById('mobileNav').classList.toggle('active');
