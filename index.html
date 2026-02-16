@@ -881,13 +881,21 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        // Loading Animation
+    <script>
+        // Loading Animation with fallback
         window.addEventListener('load', function() {
             setTimeout(function() {
                 document.getElementById('loader').classList.add('hidden');
             }, 800);
         });
+        
+        // Fallback: Force remove loader after 3 seconds regardless
+        setTimeout(function() {
+            var loader = document.getElementById('loader');
+            if (loader) {
+                loader.classList.add('hidden');
+            }
+        }, 3000);
 
         // Mobile Menu
         function toggleMobileMenu() {
